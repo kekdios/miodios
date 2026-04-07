@@ -136,7 +136,7 @@ export function AlignmentView() {
                   alt="Integrate"
                   width={500}
                   height={500}
-                  className="h-auto w-full max-w-[min(36vw,140px)] rounded-2xl"
+                  className="h-auto w-full max-w-[min(18vw,70px)] rounded-2xl"
                   priority={false}
                 />
               </span>
