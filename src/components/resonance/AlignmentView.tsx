@@ -106,7 +106,7 @@ export function AlignmentView() {
         </p>
 
         {!integrated && (
-          <div className="flex shrink-0 flex-col items-center gap-2 pb-16">
+          <div className="mt-10 flex shrink-0 flex-col items-center gap-2 pb-16">
             <motion.button
               type="button"
               onClick={triggerIntegrate}
