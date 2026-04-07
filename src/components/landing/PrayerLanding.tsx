@@ -117,14 +117,13 @@ export function PrayerLanding() {
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
               <p className="text-xs font-medium uppercase tracking-[0.25em] text-amber-200/80">
-                Resonance
+                Mio Dios
               </p>
               <h1 className="text-2xl font-medium leading-snug text-stone-100 sm:text-3xl">
-                This experience invites sound.
+                I am the WAY. the TRUTH. the LIFE.
               </h1>
               <p className="text-base leading-relaxed text-stone-400">
-                Put on headphones to align. The 963 Hz meditation track begins when you enter and
-                continues through the prayer until you choose to open the app.
+                Embody The LORDS PRAYER
               </p>
             </motion.div>
             <motion.button
@@ -254,7 +253,7 @@ export function PrayerLanding() {
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Enter the Resonance
+                  Enter Mio Dios
                 </motion.span>
               </Link>
             </motion.div>

@@ -2,7 +2,7 @@ import { ResonanceApp } from "@/components/resonance/ResonanceApp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resonance · Practice",
+  title: "Mio Dios · Practice",
   description: "Rhythm, release, and alignment — the daily practice.",
 };
 

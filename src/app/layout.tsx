@@ -8,7 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Resonance",
+  title: "Mio Dios",
   description:
     "A mobile-first prototype for rhythm, release, and cosmic alignment.",
 };

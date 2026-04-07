@@ -9,7 +9,7 @@ import { WordTumbler } from "./WordTumbler";
 const TOAST_AFTER_MS = 5000;
 
 const ALIGNMENT_WORDS = [
-  "Resonance",
+  "Mio Dios",
   "Unity",
   "Vitality",
   "Surrender",
