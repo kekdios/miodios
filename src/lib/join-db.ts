@@ -17,6 +17,14 @@ function openDb(): Database.Database {
       email TEXT NOT NULL,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
+    CREATE TABLE IF NOT EXISTS visits (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      path TEXT NOT NULL,
+      ip TEXT NOT NULL DEFAULT '',
+      user_agent TEXT NOT NULL DEFAULT '',
+      referrer TEXT NOT NULL DEFAULT '',
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
   `);
   return db;
 }
@@ -38,4 +46,22 @@ export function insertJoinSignup(row: {
     `INSERT INTO join_signups (name, phone, email) VALUES (@name, @phone, @email)`,
   );
   stmt.run(row);
+}
+
+export function insertVisit(row: {
+  path: string;
+  ip: string;
+  userAgent: string;
+  referrer: string;
+}): void {
+  const db = getJoinDb();
+  const stmt = db.prepare(
+    `INSERT INTO visits (path, ip, user_agent, referrer) VALUES (@path, @ip, @userAgent, @referrer)`,
+  );
+  stmt.run({
+    path: row.path,
+    ip: row.ip,
+    userAgent: row.userAgent,
+    referrer: row.referrer,
+  });
 }

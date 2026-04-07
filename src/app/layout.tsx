@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
+import { VisitTracker } from "@/components/VisitTracker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} h-full overflow-hidden antialiased`}>
       <body className="h-full min-h-0 overflow-hidden bg-slate-950 text-stone-100">
+        <VisitTracker />
         {children}
       </body>
     </html>
