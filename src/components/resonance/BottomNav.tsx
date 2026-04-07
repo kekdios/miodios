@@ -1,13 +1,14 @@
 "use client";
 
-import { AlignCenter, Radio, Wind } from "lucide-react";
+import { AlignCenter, Droplets, Radio, Wind } from "lucide-react";
 
-export type TabId = "rhythm" | "release" | "alignment";
+export type TabId = "rhythm" | "release" | "alignment" | "abundance";
 
 const tabs: { id: TabId; label: string; icon: typeof Radio }[] = [
   { id: "rhythm", label: "Rhythm", icon: Radio },
   { id: "release", label: "Release", icon: Wind },
   { id: "alignment", label: "Alignment", icon: AlignCenter },
+  { id: "abundance", label: "Abundance", icon: Droplets },
 ];
 
 export function BottomNav({

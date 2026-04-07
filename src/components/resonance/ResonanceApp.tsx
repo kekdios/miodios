@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { AbundanceView } from "./AbundanceView";
 import { AlignmentView } from "./AlignmentView";
 import { BottomNav, type TabId } from "./BottomNav";
 import { ReleaseView } from "./ReleaseView";
@@ -36,6 +37,7 @@ export function ResonanceApp() {
           {tab === "rhythm" && <RhythmView />}
           {tab === "release" && <ReleaseView />}
           {tab === "alignment" && <AlignmentView />}
+          {tab === "abundance" && <AbundanceView />}
         </motion.div>
       </AnimatePresence>
 
