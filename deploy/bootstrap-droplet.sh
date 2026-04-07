@@ -41,7 +41,10 @@ fi
 
 sudo -u deploy bash -lc 'cd /opt/prayer && npm ci && npm run build'
 
-echo 'deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart prayer' >/etc/sudoers.d/prayer-deploy
+cat >/etc/sudoers.d/prayer-deploy <<'EOF'
+deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart prayer
+deploy ALL=(ALL) NOPASSWD: /bin/chown -R deploy\:deploy /opt/prayer
+EOF
 chmod 0440 /etc/sudoers.d/prayer-deploy
 
 systemctl restart prayer

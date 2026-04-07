@@ -11,10 +11,18 @@ APP_DIR="${APP_DIR:-/opt/prayer}"
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
 if [[ $(id -u) -eq 0 ]] && id deploy &>/dev/null; then
+  # npm must not run as root; root-owned node_modules breaks deploy's npm ci (EACCES).
+  chown -R deploy:deploy "$APP_DIR"
   exec sudo -u deploy env SKIP_GIT="${SKIP_GIT:-}" APP_DIR="${APP_DIR:-/opt/prayer}" NODE_OPTIONS="${NODE_OPTIONS:-}" bash "$SCRIPT_PATH" "$@"
 fi
 
-cd "$APP_DIR"
+cd "$APP_DIR" || exit 1
+
+# If root ever ran npm here, node_modules can be root-owned; sudoers may allow deploy to fix (see bootstrap-droplet.sh).
+if [[ $(id -un) == deploy ]]; then
+  sudo -n chown -R deploy:deploy "$APP_DIR" 2>/dev/null || true
+fi
+
 git config --global --add safe.directory "$APP_DIR" 2>/dev/null || true
 
 if [[ "${SKIP_GIT:-}" != "1" ]]; then
