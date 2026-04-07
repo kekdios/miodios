@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useAmbientLoop } from "@/hooks/useAmbientLoop";
 import { useAlignmentWords } from "@/hooks/useWordLists";
+import { PAGES_AMBIENT_SRC, PAGES_AMBIENT_VOLUME } from "@/lib/ambient-pages";
+import { AmbientSoundToggle } from "./AmbientSoundToggle";
 import { CompletionPrompt } from "./CompletionPrompt";
 import { WordTumbler } from "./WordTumbler";
 
@@ -11,6 +14,7 @@ const TOAST_AFTER_MS = 5000;
 
 export function AlignmentView() {
   const alignmentWords = useAlignmentWords();
+  const { soundOn, toggleSound } = useAmbientLoop(PAGES_AMBIENT_SRC, PAGES_AMBIENT_VOLUME);
   const [tumblerKey, setTumblerKey] = useState(0);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [integrated, setIntegrated] = useState(false);
@@ -61,7 +65,8 @@ export function AlignmentView() {
 
   return (
     <div className="relative flex min-h-0 min-w-0 flex-1 flex-col px-5 pb-app-bottom pt-6 [overflow-x:clip]">
-      <header className="mb-2 shrink-0">
+      <header className="relative mb-2 shrink-0">
+        <AmbientSoundToggle soundOn={soundOn} onToggle={toggleSound} />
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-amber-200/70">
           Alignment
         </p>

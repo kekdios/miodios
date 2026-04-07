@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Volume2, VolumeX } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useAmbientLoop } from "@/hooks/useAmbientLoop";
+import { AmbientSoundToggle } from "./AmbientSoundToggle";
 
 /** Local copy of: rythm.mp3 */
 const RHYTHM_AUDIO_SRC = "/audio/rhythm.mp3";
@@ -51,57 +51,12 @@ export function getRhythmProfile(): RhythmProfile {
 export function RhythmView() {
   const profile = getRhythmProfile();
   const { greeting, line } = profile;
-  const [soundOn, setSoundOn] = useState(true);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    const audio = new Audio(RHYTHM_AUDIO_SRC);
-    audio.loop = true;
-    audio.preload = "auto";
-    audio.volume = RHYTHM_VOLUME;
-    audioRef.current = audio;
-    void audio.play().catch(() => {});
-
-    return () => {
-      audio.pause();
-      audio.removeAttribute("src");
-      audio.load();
-      if (audioRef.current === audio) {
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const a = audioRef.current;
-    if (!a) return;
-    a.muted = !soundOn;
-    if (soundOn) {
-      void a.play().catch(() => {});
-    }
-  }, [soundOn]);
-
-  const toggleSound = useCallback(() => {
-    setSoundOn((v) => !v);
-  }, []);
+  const { soundOn, toggleSound } = useAmbientLoop(RHYTHM_AUDIO_SRC, RHYTHM_VOLUME);
 
   return (
     <div className="flex min-h-0 min-w-0 flex-1 flex-col px-5 pb-app-bottom pt-8 [overflow-x:clip]">
       <header className="relative mb-4 shrink-0 text-center">
-        <motion.button
-          type="button"
-          onClick={toggleSound}
-          aria-pressed={soundOn}
-          aria-label={soundOn ? "Mute ambient sound" : "Turn sound on"}
-          className="absolute right-0 top-0 z-10 rounded-full p-2.5 text-amber-200/85 transition-colors hover:bg-violet-950/60 hover:text-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200/40"
-          whileTap={{ scale: 0.94 }}
-        >
-          {soundOn ? (
-            <Volume2 className="h-5 w-5" strokeWidth={2} />
-          ) : (
-            <VolumeX className="h-5 w-5" strokeWidth={2} />
-          )}
-        </motion.button>
+        <AmbientSoundToggle soundOn={soundOn} onToggle={toggleSound} />
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-amber-200/70">
           The Rhythm
         </p>
