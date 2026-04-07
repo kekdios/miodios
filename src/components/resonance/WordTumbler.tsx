@@ -140,7 +140,7 @@ export function WordTumbler({
                   ? {
                       opacity: { type: "spring", stiffness: 420, damping: 32 },
                       scale: {
-                        duration: 2.4,
+                        duration: 4.2,
                         times: [0, 1 / 3, 2 / 3, 1],
                         ease: [0.22, 0.61, 0.36, 1],
                       },

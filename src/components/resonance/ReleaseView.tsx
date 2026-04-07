@@ -11,9 +11,9 @@ import { CompletionPrompt } from "./CompletionPrompt";
 import { WordTumbler } from "./WordTumbler";
 
 /** Toast after release — not during the tumbler exit animation */
-const TOAST_AFTER_MS = 5000;
+const TOAST_AFTER_MS = 7800;
 /** Tumbler fades out over this duration once release triggers */
-const TUMBLER_FADE_S = 4;
+const TUMBLER_FADE_S = 6.5;
 
 export function ReleaseView() {
   const releaseWords = useReleaseWords();

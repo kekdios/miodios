@@ -10,7 +10,8 @@ import { AmbientSoundToggle } from "./AmbientSoundToggle";
 import { CompletionPrompt } from "./CompletionPrompt";
 import { WordTumbler } from "./WordTumbler";
 
-const TOAST_AFTER_MS = 5000;
+/** After integration scale animation (~4.2s) plus a short beat before toast */
+const TOAST_AFTER_MS = 5800;
 
 export function AlignmentView() {
   const alignmentWords = useAlignmentWords();
