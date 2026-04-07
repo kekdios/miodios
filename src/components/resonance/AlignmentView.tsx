@@ -3,28 +3,14 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useAlignmentWords } from "@/hooks/useWordLists";
 import { CompletionPrompt } from "./CompletionPrompt";
 import { WordTumbler } from "./WordTumbler";
 
 const TOAST_AFTER_MS = 5000;
 
-const ALIGNMENT_WORDS = [
-  "Mio Dios",
-  "Unity",
-  "Vitality",
-  "Surrender",
-  "Wisdom",
-  "Presence",
-  "Flow",
-  "Harmony",
-  "Radiance",
-  "Clarity",
-  "Grace",
-  "Compassion",
-  "Wholeness",
-] as const;
-
 export function AlignmentView() {
+  const alignmentWords = useAlignmentWords();
   const [tumblerKey, setTumblerKey] = useState(0);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [integrated, setIntegrated] = useState(false);
@@ -32,7 +18,7 @@ export function AlignmentView() {
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const integrateStartedRef = useRef(false);
 
-  const activeWord = ALIGNMENT_WORDS[activeWordIndex] ?? ALIGNMENT_WORDS[0];
+  const activeWord = alignmentWords[activeWordIndex] ?? alignmentWords[0];
 
   const triggerIntegrate = useCallback(() => {
     if (integrateStartedRef.current) return;
@@ -67,6 +53,12 @@ export function AlignmentView() {
     [],
   );
 
+  useEffect(() => {
+    setActiveWordIndex((i) =>
+      alignmentWords.length === 0 ? 0 : Math.min(i, alignmentWords.length - 1),
+    );
+  }, [alignmentWords.length]);
+
   return (
     <div className="relative flex min-h-0 min-w-0 flex-1 flex-col px-5 pb-app-bottom pt-6 [overflow-x:clip]">
       <header className="mb-2 shrink-0">
@@ -88,8 +80,8 @@ export function AlignmentView() {
           style={{ pointerEvents: integrated ? "none" : "auto" }}
         >
           <WordTumbler
-            key={tumblerKey}
-            words={ALIGNMENT_WORDS}
+            key={`${tumblerKey}-${alignmentWords.join("|")}`}
+            words={alignmentWords}
             activeIndex={activeWordIndex}
             onActiveIndexChange={setActiveWordIndex}
             disabled={integrated}

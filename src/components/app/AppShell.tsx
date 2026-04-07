@@ -7,9 +7,10 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 const MENU_LINKS = [
+  { href: "/app", label: "Practice" },
   { href: "/app/prayer", label: "Prayer" },
   { href: "/app/explanation", label: "Explanation" },
-  { href: "/app", label: "Practice" },
+  { href: "/app/settings", label: "Settings" },
 ] as const;
 
 export function AppShell({ children }: { children: React.ReactNode }) {

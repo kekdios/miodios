@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useReleaseWords } from "@/hooks/useWordLists";
 import { CompletionPrompt } from "./CompletionPrompt";
 import { WordTumbler } from "./WordTumbler";
 
@@ -11,21 +12,8 @@ const TOAST_AFTER_MS = 5000;
 /** Tumbler fades out over this duration once release triggers */
 const TUMBLER_FADE_S = 4;
 
-const INTERFERENCE_WORDS = [
-  "Guilt",
-  "Control",
-  "Fear",
-  "Resentment",
-  "Separation",
-  "Scarcity",
-  "Attachment",
-  "Judgment",
-  "Doubt",
-  "Pride",
-  "Expectation",
-] as const;
-
 export function ReleaseView() {
+  const releaseWords = useReleaseWords();
   const [tumblerKey, setTumblerKey] = useState(0);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [released, setReleased] = useState(false);
@@ -33,7 +21,7 @@ export function ReleaseView() {
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releaseStartedRef = useRef(false);
 
-  const activeWord = INTERFERENCE_WORDS[activeWordIndex] ?? INTERFERENCE_WORDS[0];
+  const activeWord = releaseWords[activeWordIndex] ?? releaseWords[0];
 
   const triggerRelease = useCallback(() => {
     if (releaseStartedRef.current) return;
@@ -66,6 +54,12 @@ export function ReleaseView() {
     },
     [],
   );
+
+  useEffect(() => {
+    setActiveWordIndex((i) =>
+      releaseWords.length === 0 ? 0 : Math.min(i, releaseWords.length - 1),
+    );
+  }, [releaseWords.length]);
 
   return (
     <div className="relative flex min-h-0 min-w-0 flex-1 flex-col px-5 pb-app-bottom pt-6 [overflow-x:clip]">
@@ -102,8 +96,8 @@ export function ReleaseView() {
           style={{ pointerEvents: released ? "none" : "auto" }}
         >
           <WordTumbler
-            key={tumblerKey}
-            words={INTERFERENCE_WORDS}
+            key={`${tumblerKey}-${releaseWords.join("|")}`}
+            words={releaseWords}
             activeIndex={activeWordIndex}
             onActiveIndexChange={setActiveWordIndex}
             disabled={released}
