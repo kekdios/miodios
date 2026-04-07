@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 const MENU_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/app", label: "Practice" },
   { href: "/app/prayer", label: "Prayer" },
   { href: "/app/explanation", label: "Explanation" },
@@ -95,9 +96,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <ul className="flex flex-col gap-1 px-2 pt-4">
                 {MENU_LINKS.map(({ href, label }) => {
                   const active =
-                    href === "/app"
-                      ? pathname === "/app"
-                      : pathname === href || pathname.startsWith(`${href}/`);
+                    href === "/"
+                      ? pathname === "/"
+                      : href === "/app"
+                        ? pathname === "/app"
+                        : pathname === href || pathname.startsWith(`${href}/`);
                   return (
                     <li key={href}>
                       <Link
