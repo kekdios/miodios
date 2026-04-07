@@ -20,6 +20,44 @@ const FINALE =
 const PRAYER_MUSIC_SRC = "/audio/963-meditation.mp3";
 const MUSIC_VOLUME = 0.52;
 
+function ShareMeButton() {
+  const [label, setLabel] = useState("Share Me");
+
+  const handleClick = async () => {
+    const url =
+      typeof window !== "undefined"
+        ? `${window.location.origin}${window.location.pathname || "/"}`
+        : "";
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: document.title, url });
+        return;
+      }
+    } catch (err) {
+      if (err instanceof Error && err.name === "AbortError") return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setLabel("Link copied");
+      window.setTimeout(() => setLabel("Share Me"), 2000);
+    } catch {
+      setLabel("Copy unavailable");
+      window.setTimeout(() => setLabel("Share Me"), 2000);
+    }
+  };
+
+  return (
+    <motion.button
+      type="button"
+      onClick={() => void handleClick()}
+      className="rounded-full border border-stone-600/50 bg-slate-900/70 px-8 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/90 transition-colors hover:border-amber-200/35 hover:text-amber-50"
+      whileTap={{ scale: 0.97 }}
+    >
+      {label}
+    </motion.button>
+  );
+}
+
 const verseVariants = {
   rest: {
     opacity: 0.22,
@@ -234,11 +272,13 @@ export function PrayerLanding() {
             </div>
 
             <motion.div
+              className="flex flex-col items-center gap-4"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
+              <ShareMeButton />
               <Link href="/app" onClick={stopPrayerAudio} className="inline-block">
                 <motion.span
                   className="inline-flex cursor-pointer items-center justify-center rounded-full border border-amber-200/40 bg-gradient-to-r from-violet-700/90 to-indigo-800/90 px-10 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-stone-100"

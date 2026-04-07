@@ -11,6 +11,7 @@ const MENU_LINKS = [
   { href: "/app", label: "Practice" },
   { href: "/app/prayer", label: "Prayer" },
   { href: "/app/explanation", label: "Explanation" },
+  { href: "/app/donate", label: "Donate" },
   { href: "/app/settings", label: "Settings" },
 ] as const;
 
