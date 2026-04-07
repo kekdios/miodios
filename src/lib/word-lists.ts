@@ -2,7 +2,7 @@ const STORAGE_ALIGNMENT = "miodios.alignmentWords";
 const STORAGE_RELEASE = "miodios.releaseWords";
 
 export const DEFAULT_ALIGNMENT_WORDS: string[] = [
-  "Mio Dios",
+  "Love",
   "Unity",
   "Vitality",
   "Surrender",
