@@ -20,6 +20,5 @@ jobs:
             cd /opt/prayer
             git fetch origin main
             git reset --hard origin/main
-            npm ci
-            npm run build
-            sudo systemctl restart prayer
+            chmod +x deploy/update-app.sh 2>/dev/null || true
+            SKIP_GIT=1 bash deploy/update-app.sh
