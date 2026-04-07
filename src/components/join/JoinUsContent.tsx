@@ -52,7 +52,7 @@ export function JoinUsContent() {
           src="/images/jesus_welcome.png"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-top"
           sizes="(max-width: 640px) 100vw, 20rem"
           priority={false}
         />
