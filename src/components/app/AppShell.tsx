@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 
 const MENU_LINKS = [
   { href: "/app/prayer", label: "Prayer" },
+  { href: "/app/explanation", label: "Explanation" },
   { href: "/app", label: "Practice" },
 ] as const;
 
