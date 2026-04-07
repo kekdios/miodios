@@ -17,7 +17,7 @@ if [[ -n "$DOMAIN" ]]; then
 server {
     listen 80;
     listen [::]:80;
-    server_name ${DOMAIN};
+    server_name ${DOMAIN} www.${DOMAIN};
 
     location / {
         proxy_pass http://127.0.0.1:8080;
