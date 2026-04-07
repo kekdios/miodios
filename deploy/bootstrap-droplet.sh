@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-time (and safe re-run) setup on Ubuntu 22.04/24.04: Node.js 20, deploy user, clone, build, systemd.
+# One-time (and safe re-run) setup on Ubuntu 22.04/24.04: Node.js 24, deploy user, clone, build, systemd.
 # Intended to be copied to the server (e.g. via deploy/provision.sh) and run as root:
 #   bash /root/miodios-deploy/bootstrap-droplet.sh
 
@@ -11,7 +11,7 @@ GIT_REPO="${GIT_REPO:-https://github.com/kekdios/miodios.git}"
 apt-get update -y
 apt-get install -y ca-certificates curl gnupg git
 
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
 apt-get install -y nodejs
 
 if ! id deploy >/dev/null 2>&1; then
