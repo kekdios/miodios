@@ -160,12 +160,12 @@ export function PrayerLanding() {
                   alt=""
                   width={500}
                   height={500}
-                  className="h-auto w-[min(56vw,220px)] max-w-full object-contain sm:w-[min(48vw,260px)]"
+                  className="h-auto w-[min(14vw,55px)] max-w-full object-contain sm:w-[min(12vw,65px)]"
                   priority
-                  sizes="(max-width: 640px) 56vw, 260px"
+                  sizes="(max-width: 640px) 14vw, 65px"
                 />
               </div>
-              <p className="text-xs font-medium uppercase tracking-[0.25em] text-amber-200/80">
+              <p className="text-[length:calc(0.75rem*1.25)] font-medium uppercase leading-tight tracking-[0.25em] text-amber-200/80">
                 Mio Dios
               </p>
               <h1 className="text-2xl font-medium leading-snug text-stone-100 sm:text-3xl">
