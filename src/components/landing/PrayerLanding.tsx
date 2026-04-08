@@ -154,6 +154,17 @@ export function PrayerLanding() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
+              <div className="flex justify-center">
+                <Image
+                  src="/images/logo_md.png"
+                  alt=""
+                  width={500}
+                  height={500}
+                  className="h-auto w-[min(56vw,220px)] max-w-full object-contain sm:w-[min(48vw,260px)]"
+                  priority
+                  sizes="(max-width: 640px) 56vw, 260px"
+                />
+              </div>
               <p className="text-xs font-medium uppercase tracking-[0.25em] text-amber-200/80">
                 Mio Dios
               </p>
