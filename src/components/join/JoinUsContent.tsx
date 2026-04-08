@@ -135,6 +135,15 @@ export function JoinUsContent() {
           {status === "submitting" ? "Sending…" : "Send"}
         </button>
       </form>
+
+      <footer className="border-t border-violet-500/15 pt-6 text-center text-xs leading-relaxed text-stone-500">
+        <a
+          href="mailto:privacyemail369@gmail.com"
+          className="text-amber-200/80 underline decoration-amber-200/25 underline-offset-2 transition-colors hover:text-amber-50 hover:decoration-amber-200/50"
+        >
+          privacyemail369@gmail.com
+        </a>
+      </footer>
     </article>
   );
 }
