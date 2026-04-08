@@ -12,6 +12,7 @@ const MENU_LINKS = [
   { href: "/app/prayer", label: "Prayer" },
   { href: "/app/explanation", label: "Explanation" },
   { href: "/app/frequencies", label: "Frequencies" },
+  { href: "/app/369", label: "369" },
   { href: "/app/join", label: "Join Us" },
   { href: "/app/settings", label: "Settings" },
 ] as const;
