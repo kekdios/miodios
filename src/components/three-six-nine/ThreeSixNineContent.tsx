@@ -1,3 +1,5 @@
+import { ThreeSixNineCombinationTones } from "./ThreeSixNineCombinationTones";
+
 export function ThreeSixNineContent() {
   return (
     <article className="space-y-8 pb-10 pt-1 text-stone-200">
@@ -7,6 +9,8 @@ export function ThreeSixNineContent() {
           Three, six, and nine — foundation, bridge, and culmination — mirrored in prayer and presence.
         </p>
       </header>
+
+      <ThreeSixNineCombinationTones />
 
       <section className="space-y-8" aria-label="Three, six, and nine">
         <div className="rounded-2xl border border-violet-500/15 bg-slate-900/35 p-4 shadow-inner shadow-black/20 sm:p-5">
