@@ -8,6 +8,21 @@ export function ExplanationContent() {
         </p>
       </header>
 
+      <section className="space-y-3" aria-label="Prayer video">
+        <h2 className="text-sm font-medium uppercase tracking-[0.12em] text-stone-500">Prayer video</h2>
+        <div className="overflow-hidden rounded-2xl border border-violet-500/15 bg-black/40 shadow-lg shadow-violet-950/30">
+          <video
+            className="max-h-[min(70vh,520px)] w-full object-contain"
+            controls
+            playsInline
+            preload="metadata"
+          >
+            <source src="/videos/VideoPrayer.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
       <section className="space-y-4">
         <h2 className="text-lg font-semibold text-amber-100/95">The Divine as Frequency and Source</h2>
         <div className="space-y-3 text-sm leading-relaxed text-stone-400">
