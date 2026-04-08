@@ -10,8 +10,6 @@ export function ThreeSixNineContent() {
         </p>
       </header>
 
-      <ThreeSixNineCombinationTones />
-
       <section className="space-y-8" aria-label="Three, six, and nine">
         <div className="rounded-2xl border border-violet-500/15 bg-slate-900/35 p-4 shadow-inner shadow-black/20 sm:p-5">
           <p className="text-3xl font-light tabular-nums text-amber-200/90">3</p>
@@ -67,6 +65,8 @@ export function ThreeSixNineContent() {
           </p>
         </div>
       </section>
+
+      <ThreeSixNineCombinationTones />
     </article>
   );
 }
