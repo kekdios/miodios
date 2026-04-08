@@ -2,7 +2,7 @@ import { ThreeSixNineCombinationTones } from "./ThreeSixNineCombinationTones";
 
 export function ThreeSixNineContent() {
   return (
-    <article className="space-y-8 pb-10 pt-1 text-stone-200">
+    <article className="min-w-0 space-y-8 pb-10 pt-1 text-stone-200">
       <header className="space-y-3 border-b border-violet-500/15 pb-6">
         <h1 className="text-xl font-semibold leading-snug text-amber-50 sm:text-2xl">369</h1>
         <p className="text-sm leading-relaxed text-stone-300">
