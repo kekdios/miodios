@@ -18,9 +18,9 @@ Open `http://localhost:8080` (open `index.html` via the directory listing or ren
 - **GitHub Pages**: Put these files in the published branch (or `/docs`) and enable Pages; ensure asset paths match your repo’s base URL (use a `base` tag or full paths if the site is not at domain root).
 - **Mio Dios (this repo)**: The app exposes the same content at **`/kwa`** via the Next.js route, which embeds this HTML in a full-viewport iframe pointing to **`/kwa/index.html`**.
 
-## Replace the hero image
+## Hero banner
 
-Edit `index.html` and change the `src` of the hero `<img>` to any **HTTPS** image URL you have rights to use. Keep `width` / `height` or `aspect-ratio` in CSS for layout stability.
+The page uses **`kwa_banner.png`** in this folder (replace that file to update the header image). For a remote URL instead, set the hero `<img src="...">` in `index.html` and adjust `width` / `height` to match the asset.
 
 ## QR codes
 
