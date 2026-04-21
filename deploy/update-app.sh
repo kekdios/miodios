@@ -33,7 +33,9 @@ fi
 # Next.js build can spike memory; small droplets may OOM without swap — see deploy/add-swap.sh
 export NODE_OPTIONS="${NODE_OPTIONS:---max-old-space-size=4096}"
 
-npm ci
+# better-sqlite3 still depends on prebuild-install; npm marks that package deprecated even though installs
+# work. --loglevel error keeps deploy logs clean; real install failures still fail the script.
+npm ci --loglevel error
 npm run build
 sudo systemctl restart prayer
 

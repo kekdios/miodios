@@ -7,7 +7,7 @@ export default function KwaPage() {
     <iframe
       title="Kenya Women Aid"
       src="/kwa/index.html"
-      className="fixed inset-0 z-[100] block h-[100dvh] w-full border-0 bg-white"
+      className="fixed inset-0 z-[100] block h-[100dvh] w-full border-0 bg-slate-950"
       allow="clipboard-write"
     />
   );
