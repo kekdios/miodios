@@ -65,3 +65,26 @@ export function insertVisit(row: {
     referrer: row.referrer,
   });
 }
+
+export type VisitRow = {
+  id: number;
+  path: string;
+  ip: string;
+  user_agent: string;
+  referrer: string;
+  created_at: string;
+};
+
+const VISIT_LIST_LIMIT = 500;
+
+export function listVisitsRecent(limit: number = VISIT_LIST_LIMIT): VisitRow[] {
+  const db = getJoinDb();
+  const cap = Math.min(Math.max(1, limit), 2000);
+  const stmt = db.prepare(
+    `SELECT id, path, ip, user_agent, referrer, created_at
+     FROM visits
+     ORDER BY id DESC
+     LIMIT ?`,
+  );
+  return stmt.all(cap) as VisitRow[];
+}
