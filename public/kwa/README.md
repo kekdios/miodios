@@ -20,7 +20,7 @@ Open `http://localhost:8080` (open `index.html` via the directory listing or ren
 
 ## Hero banner
 
-The page uses **`kwa_banner.png`** in this folder (replace that file to update the header image). For a remote URL instead, set the hero `<img src="...">` in `index.html` and adjust `width` / `height` to match the asset.
+The header title uses **`kwa_log.png`** (replace that file to update the logo). The hero strip uses **`kwa_banner.png`**. For remote URLs instead, update the corresponding `<img src="...">` in `index.html` and adjust `width` / `height`.
 
 ## Canonical & social URLs
 

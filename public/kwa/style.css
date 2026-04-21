@@ -96,6 +96,22 @@ a:hover {
   color: #fafaf9;
 }
 
+.site-title--logo {
+  font-size: 0;
+  line-height: 0;
+  font-weight: inherit;
+}
+
+.site-logo {
+  display: block;
+  max-width: min(16rem, 88vw);
+  width: auto;
+  height: auto;
+  max-height: 5.25rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .tagline {
   margin: 0;
   font-size: 1.05rem;

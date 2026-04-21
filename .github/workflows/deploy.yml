@@ -17,6 +17,8 @@ jobs:
           script_stop: true
           script: |
             set -e
+            # If SSH user is root but the repo is owned by deploy, git 2.35+ refuses without this:
+            git config --global --add safe.directory /opt/prayer
             cd /opt/prayer
             git fetch origin main
             git reset --hard origin/main
