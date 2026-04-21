@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 :root {
   --md-bg: #020617;
   --md-fg: #e7e5e4;
@@ -301,6 +313,11 @@ h3,
   transform: scale(0.98);
 }
 
+.btn:focus-visible {
+  outline: 2px solid rgb(253 230 138 / 0.65);
+  outline-offset: 2px;
+}
+
 .btn-copy {
   border: 1px solid rgb(253 230 138 / 0.35);
   background: rgb(109 40 217 / 0.85);
@@ -474,6 +491,11 @@ h3,
 .modal-close:hover {
   background: rgb(51 65 85 / 0.9);
   color: var(--md-fg);
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid rgb(253 230 138 / 0.7);
+  outline-offset: 2px;
 }
 
 #qr-modal-title {

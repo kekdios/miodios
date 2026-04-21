@@ -22,6 +22,10 @@ Open `http://localhost:8080` (open `index.html` via the directory listing or ren
 
 The page uses **`kwa_banner.png`** in this folder (replace that file to update the header image). For a remote URL instead, set the hero `<img src="...">` in `index.html` and adjust `width` / `height` to match the asset.
 
+## Canonical & social URLs
+
+`index.html` uses **`https://miodios.com`** for `rel="canonical"`, Open Graph, Twitter cards, and JSON-LD. If the site is served from another domain, search/replace that base URL in the `<head>`.
+
 ## QR codes
 
 - Thumbnails and the pop-up use `https://api.qrserver.com/` with the exact wallet string as `data`.

@@ -8,6 +8,28 @@
       content="Kenya Women Aid — Empowering young Kenyan women through crypto-driven micro-enterprise."
     />
     <title>Kenya Women Aid</title>
+    <link rel="canonical" href="https://miodios.com/kwa/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kenya Women Aid" />
+    <meta property="og:title" content="Kenya Women Aid" />
+    <meta
+      property="og:description"
+      content="Empowering young Kenyan women through crypto-driven micro-enterprise. Donate via Solana, Bitcoin, or Ethereum."
+    />
+    <meta property="og:url" content="https://miodios.com/kwa/index.html" />
+    <meta property="og:image" content="https://miodios.com/kwa/kwa_banner.png" />
+    <meta property="og:image:width" content="1584" />
+    <meta property="og:image:height" content="672" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kenya Women Aid" />
+    <meta
+      name="twitter:description"
+      content="Empowering young Kenyan women through crypto-driven micro-enterprise. Donate via crypto."
+    />
+    <meta name="twitter:image" content="https://miodios.com/kwa/kwa_banner.png" />
+    <link rel="preconnect" href="https://api.qrserver.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.qrserver.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +37,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kenya Women Aid",
+        "url": "https://miodios.com/kwa/index.html",
+        "description": "Supporting young Kenyan women through crypto donations for rent, food, education, and micro-enterprise.",
+        "email": "privacyemail369@gmail.com"
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -29,6 +61,8 @@
             width="1584"
             height="672"
             loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -111,7 +145,12 @@
               />
               <div class="address-box" id="addr-sol">EQg3uC7tM4wENByPXnyF2aStYivQ4DpRniBkqYU1KqVv</div>
               <div class="card-actions">
-                <button type="button" class="btn btn-copy" data-copy="EQg3uC7tM4wENByPXnyF2aStYivQ4DpRniBkqYU1KqVv">
+                <button
+                  type="button"
+                  class="btn btn-copy"
+                  data-copy="EQg3uC7tM4wENByPXnyF2aStYivQ4DpRniBkqYU1KqVv"
+                  aria-label="Copy Solana donation address to clipboard"
+                >
                   Copy address
                 </button>
                 <button
@@ -120,6 +159,7 @@
                   data-qr-open
                   data-qr-title="Solana"
                   data-address="EQg3uC7tM4wENByPXnyF2aStYivQ4DpRniBkqYU1KqVv"
+                  aria-label="Open large QR code for Solana address"
                 >
                   Pop-up QR
                 </button>
@@ -146,7 +186,12 @@
               />
               <div class="address-box" id="addr-btc">bc1qht34l3ek73rjey3yhlyvgh4f9e88xre7hzwpw4</div>
               <div class="card-actions">
-                <button type="button" class="btn btn-copy" data-copy="bc1qht34l3ek73rjey3yhlyvgh4f9e88xre7hzwpw4">
+                <button
+                  type="button"
+                  class="btn btn-copy"
+                  data-copy="bc1qht34l3ek73rjey3yhlyvgh4f9e88xre7hzwpw4"
+                  aria-label="Copy Bitcoin donation address to clipboard"
+                >
                   Copy address
                 </button>
                 <button
@@ -155,6 +200,7 @@
                   data-qr-open
                   data-qr-title="Bitcoin"
                   data-address="bc1qht34l3ek73rjey3yhlyvgh4f9e88xre7hzwpw4"
+                  aria-label="Open large QR code for Bitcoin address"
                 >
                   Pop-up QR
                 </button>
@@ -181,7 +227,12 @@
               />
               <div class="address-box" id="addr-eth">0x95df1173BDEBc269DE451da165d50E56024e23Ff</div>
               <div class="card-actions">
-                <button type="button" class="btn btn-copy" data-copy="0x95df1173BDEBc269DE451da165d50E56024e23Ff">
+                <button
+                  type="button"
+                  class="btn btn-copy"
+                  data-copy="0x95df1173BDEBc269DE451da165d50E56024e23Ff"
+                  aria-label="Copy Ethereum donation address to clipboard"
+                >
                   Copy address
                 </button>
                 <button
@@ -190,6 +241,7 @@
                   data-qr-open
                   data-qr-title="Ethereum"
                   data-address="0x95df1173BDEBc269DE451da165d50E56024e23Ff"
+                  aria-label="Open large QR code for Ethereum address"
                 >
                   Pop-up QR
                 </button>
@@ -253,11 +305,21 @@
       </div>
     </footer>
 
-    <div id="qr-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
+    <div
+      id="qr-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="qr-modal-title"
+      aria-describedby="qr-modal-desc"
+    >
       <div class="modal-backdrop" tabindex="-1"></div>
       <div class="modal-box">
-        <button type="button" class="modal-close" aria-label="Close">&times;</button>
+        <button type="button" class="modal-close" aria-label="Close QR code dialog">&times;</button>
         <h3 id="qr-modal-title"></h3>
+        <p id="qr-modal-desc" class="sr-only">
+          Scan this code with your wallet app or verify the address below before sending funds.
+        </p>
         <img id="qr-modal-img" src="" alt="" width="280" height="280" />
         <p id="qr-modal-address"></p>
       </div>
