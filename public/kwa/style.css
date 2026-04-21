@@ -385,35 +385,26 @@ h3,
   border-top: 1px solid var(--md-violet-border);
 }
 
-.social-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+.footer-contact {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--md-muted);
 }
 
-.social-row a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  background: rgb(139 92 246 / 0.12);
-  color: rgb(254 243 199 / 0.9);
-  text-decoration: none;
-  border: 1px solid rgb(139 92 246 / 0.2);
+.footer-email {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgb(253 230 138 / 0.35);
+  text-underline-offset: 3px;
 }
 
-.social-row a:hover {
-  background: rgb(124 58 237 / 0.25);
-  color: #fffbeb;
+.footer-email:hover {
+  text-decoration-color: rgb(253 230 138 / 0.65);
 }
 
-.social-row svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
+.footer-contact-hint {
+  font-weight: 400;
+  opacity: 0.85;
 }
 
 .disclaimer {
