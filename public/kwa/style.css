@@ -97,6 +97,9 @@ a:hover {
 }
 
 .site-title--logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   font-size: 0;
   line-height: 0;
   font-weight: inherit;
@@ -104,12 +107,12 @@ a:hover {
 
 .site-logo {
   display: block;
-  max-width: min(16rem, 88vw);
+  max-width: min(24rem, 92vw);
   width: auto;
   height: auto;
-  max-height: 5.25rem;
+  max-height: 7.875rem;
   object-fit: contain;
-  object-position: left center;
+  object-position: center;
 }
 
 .tagline {
