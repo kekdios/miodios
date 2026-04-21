@@ -1,0 +1,383 @@
+/* Kenya Women Aid — standalone landing (also embedded at /kwa) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1a2f2e;
+  background: linear-gradient(165deg, #e8f4f2 0%, #fff8f0 45%, #fdf6ed 100%);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #0d7c7a;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #c45c26;
+}
+
+.container {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header / hero */
+.site-header {
+  background: linear-gradient(135deg, #0d7c7a 0%, #0a5c5a 50%, #156b5c 100%);
+  color: #fff;
+  padding: 2rem 0 2.5rem;
+  box-shadow: 0 4px 24px rgba(13, 124, 122, 0.25);
+}
+
+.site-header .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+  max-width: 36rem;
+}
+
+.hero-wrap {
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-wrap img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Sections */
+section {
+  padding: 2.5rem 0;
+}
+
+section.section-muted {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  color: #0d5c5a;
+}
+
+h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: #0d7c7a;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+  color: #2d4a47;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Crypto cards */
+.network-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .network-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.network-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(13, 124, 122, 0.2);
+  box-shadow: 0 4px 16px rgba(13, 124, 122, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.network-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.network-head img {
+  width: 28px;
+  height: 28px;
+}
+
+.network-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0d5c5a;
+}
+
+.address-box {
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  word-break: break-all;
+  background: #f0faf9;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(13, 124, 122, 0.15);
+  color: #1a2f2e;
+}
+
+.qr-thumb {
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-copy {
+  background: #0d7c7a;
+  color: #fff;
+}
+
+.btn-copy:hover {
+  background: #0a6563;
+}
+
+.btn-copy.copied {
+  background: #2a8f5c;
+}
+
+.btn-qr {
+  background: #e8742a;
+  color: #fff;
+}
+
+.btn-qr:hover {
+  background: #c45c26;
+}
+
+/* How to donate */
+.steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #2d4a47;
+}
+
+.steps li {
+  margin-bottom: 0.65rem;
+}
+
+/* Updates */
+.updates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.updates-list li {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  border: 1px dashed rgba(13, 124, 122, 0.25);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #2d4a47;
+}
+
+.explorer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.explorer-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Footer */
+.site-footer {
+  background: #1a2f2e;
+  color: #c5ddd9;
+  padding: 2rem 0;
+  margin-top: 0;
+}
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.social-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-row a:hover {
+  background: #0d7c7a;
+  color: #fff;
+}
+
+.social-row svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.disclaimer {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  max-width: 40rem;
+}
+
+/* QR modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+
+.modal-box {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 22rem;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 0.5rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-close:hover {
+  background: #e0e0e0;
+}
+
+#qr-modal-title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #0d5c5a;
+}
+
+#qr-modal-img {
+  margin: 0 auto 1rem;
+  border-radius: 0.5rem;
+}
+
+#qr-modal-address {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+  word-break: break-all;
+  color: #2d4a47;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
