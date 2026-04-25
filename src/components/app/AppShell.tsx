@@ -10,6 +10,7 @@ const MENU_LINKS = [
   { href: "/", label: "Home" },
   { href: "/app", label: "Practice" },
   { href: "/app/prayer", label: "Prayer" },
+  { href: "/app/songs", label: "Songs" },
   { href: "/app/explanation", label: "Explanation" },
   { href: "/app/frequencies", label: "Frequencies" },
   { href: "/app/369", label: "369" },
