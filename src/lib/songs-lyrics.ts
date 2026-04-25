@@ -180,3 +180,170 @@ Yours is the order
 Within and without
 Yours is the power
 Forever shining out`;
+
+/** 369 Pop — track 1 */
+export const SONG_LYRICS_369POP_ONE = `Verse 1
+Three six nine
+Wash me clean
+Three six nine
+Make me free
+Got this weight
+On my chest
+I keep reaching
+For rest
+Pre-Chorus
+Six three nine
+Lead me home
+Nine three six
+I am not alone
+When I fall
+You stay near
+Call me back
+Pull me clear
+Chorus
+Three six nine
+Let it ring
+Three six nine
+In everything
+Six three nine
+Take my stone
+Nine three six
+Make me whole
+Three six nine
+Let it ring
+Three six nine
+In everything
+Verse 2
+Broken hands
+Open wide
+Mud on my shoes
+Still I try
+Every scar
+You can see
+Still you say
+Come to me
+Pre-Chorus
+Six three nine
+Lead me home
+Nine three six
+I am not alone
+When I fall
+You stay near
+Call me back
+Pull me clear
+Chorus
+Three six nine
+Let it ring
+Three six nine
+In everything
+Six three nine
+Take my stone
+Nine three six
+Make me whole
+Three six nine
+Let it ring
+Three six nine
+In everything
+Bridge
+If my name
+Starts to shake
+If my heart
+Starts to break
+Speak that grace
+Over me
+Three six nine
+Set me free
+Final Chorus
+Three six nine
+Let it ring
+Three six nine
+In everything
+Three six nine
+Wash me clean
+Three six nine`;
+
+/** 369 Pop — track 2 (final chorus variant) */
+export const SONG_LYRICS_369POP_TWO = `Verse 1
+Three six nine
+Wash me clean
+Three six nine
+Make me free
+Got this weight
+On my chest
+I keep reaching
+For rest
+Pre-Chorus
+Six three nine
+Lead me home
+Nine three six
+I am not alone
+When I fall
+You stay near
+Call me back
+Pull me clear
+Chorus
+Three six nine
+Let it ring
+Three six nine
+In everything
+Six three nine
+Take my stone
+Nine three six
+Make me whole
+Three six nine
+Let it ring
+Three six nine
+In everything
+Verse 2
+Broken hands
+Open wide
+Mud on my shoes
+Still I try
+Every scar
+You can see
+Still you say
+Come to me
+Pre-Chorus
+Six three nine
+Lead me home
+Nine three six
+I am not alone
+When I fall
+You stay near
+Call me back
+Pull me clear
+Chorus
+Three six nine
+Let it ring
+Three six nine
+In everything
+Six three nine
+Take my stone
+Nine three six
+Make me whole
+Three six nine
+Let it ring
+Three six nine
+In everything
+Bridge
+If my name
+Starts to shake
+If my heart
+Starts to break
+Speak that grace
+Over me
+Three six nine
+Set me free
+Final Chorus
+Three six nine
+Let it ring
+Three six nine
+In everything
+Six three nine
+Take my stone
+Nine three six
+Make me whole
+Three six nine
+Let it ring
+Three six nine
+Wash me clean`;
