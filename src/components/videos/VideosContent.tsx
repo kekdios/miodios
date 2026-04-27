@@ -16,7 +16,7 @@ export function VideosContent() {
             playsInline
             preload="metadata"
           >
-            <source src="/videos/369-portrait.mp4" type="video/mp4" />
+            <source src="/videos/369-mv.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -33,7 +33,7 @@ export function VideosContent() {
             playsInline
             preload="metadata"
           >
-            <source src="/videos/rise-portrait.mp4" type="video/mp4" />
+            <source src="/videos/rise-within-mv.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
