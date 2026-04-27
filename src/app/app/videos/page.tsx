@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mio Dios · Videos",
-  description: "369 Portrait and Rise Portrait videos.",
+  description: "369 and Rise Within videos.",
 };
 
 export default function VideosPage() {
