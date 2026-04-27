@@ -146,6 +146,112 @@ a:hover {
   object-fit: cover;
 }
 
+.music-donation-block {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.music-donation-intro {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(139 92 246 / 0.22);
+  background: var(--md-card);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--md-muted);
+}
+
+.music-donation-intro strong {
+  color: rgb(231 229 228 / 0.95);
+  font-weight: 600;
+}
+
+.music-tracks {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .music-tracks {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.music-track-card {
+  border-radius: 1rem;
+  border: 1px solid var(--md-violet-border);
+  background: var(--md-card);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgb(2 6 23 / 0.45);
+}
+
+.music-track-label {
+  margin: 0;
+  padding: 0.85rem 1rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgb(254 243 199 / 0.92);
+}
+
+.music-track-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: min(42vw, 16rem);
+  min-height: 8rem;
+  background: rgb(0 0 0 / 0.35);
+}
+
+.music-track-cover img {
+  width: 100%;
+  max-height: min(42vw, 16rem);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.music-track-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid rgb(139 92 246 / 0.15);
+}
+
+.music-track-body audio {
+  width: 100%;
+  min-height: 2.5rem;
+}
+
+.music-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fffbeb;
+  border: 1px solid rgb(253 230 138 / 0.35);
+  background: rgb(109 40 217 / 0.75);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.music-download:hover {
+  background: rgb(124 58 237 / 0.88);
+  color: #fffbeb;
+}
+
+.music-download-icon {
+  flex-shrink: 0;
+}
+
 .changenow-callout {
   margin-top: 2rem;
   padding: 1.25rem 1.5rem;
