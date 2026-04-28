@@ -22,6 +22,29 @@ export function VideosContent() {
         </div>
       </section>
 
+      <section
+        className="space-y-3 border-t border-violet-500/10 pt-8"
+        aria-labelledby="video-rise-within-female-ext-heading"
+      >
+        <h2
+          id="video-rise-within-female-ext-heading"
+          className="text-sm font-medium uppercase tracking-[0.12em] text-stone-500"
+        >
+          Rise Within · female · extended
+        </h2>
+        <div className="overflow-hidden rounded-2xl border border-violet-500/15 bg-black/40 shadow-lg shadow-violet-950/30">
+          <video
+            className="max-h-[min(70vh,520px)] w-full object-contain"
+            controls
+            playsInline
+            preload="metadata"
+          >
+            <source src="/videos/rise-within-female-ext-mv.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
       <section className="space-y-3 border-t border-violet-500/10 pt-8" aria-labelledby="video-rise-within-heading">
         <h2 id="video-rise-within-heading" className="text-sm font-medium uppercase tracking-[0.12em] text-stone-500">
           Rise Within
