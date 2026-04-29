@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mio Dios · Videos",
-  description: "Music videos — 369, Rise Within female extended, and Rise Within.",
+  description:
+    "Music videos — Kingdom Rise, 369, Rise Within female extended, and Rise Within.",
 };
 
 export default function VideosPage() {
