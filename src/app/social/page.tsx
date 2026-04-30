@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mio Dios · Kingdom Rise",
     description:
-      "Portrait Kingdom Rise videos. Kenya Women Aid has more songs, downloads, and ways to contribute.",
+      "Kingdom Rise videos. Kenya Women Aid has more songs, downloads, and ways to contribute.",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Kingdom Rise · portrait videos · Mio Dios",
+    title: "Kingdom Rise · videos · Mio Dios",
     description:
-      "Two Kingdom Rise portrait MVs — then visit Kenya Women Aid for more recordings and downloads.",
+      "Two Kingdom Rise videos — then visit Kenya Women Aid for more recordings and downloads.",
   },
 };
 
