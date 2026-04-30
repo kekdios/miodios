@@ -47,6 +47,18 @@ export function KingdomRiseSocialContent() {
         </section>
       </div>
 
+      <section className="space-y-3 border-t border-violet-500/10 pt-8" aria-labelledby="social-prayer-heading">
+        <h2 id="social-prayer-heading" className="text-sm font-medium uppercase tracking-[0.12em] text-stone-500">
+          Original Lords Prayer - Spoken
+        </h2>
+        <div className="overflow-hidden rounded-2xl border border-violet-500/15 bg-black/40 shadow-lg shadow-violet-950/30">
+          <video className="max-h-[min(70vh,520px)] w-full object-contain" controls playsInline preload="metadata">
+            <source src="/videos/prayer-original-lords-spoken.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
       <aside className="rounded-2xl border border-violet-500/20 bg-violet-950/25 px-4 py-3 text-[0.9rem] leading-relaxed text-stone-300">
         Looking for audio downloads and crypto donation addresses? Everything is gathered on{" "}
         <Link href="/kwa" className="font-medium text-amber-100/95 underline underline-offset-2 hover:text-amber-50">
