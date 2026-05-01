@@ -3,22 +3,26 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
-
-const STANZAS = [
-  "Oh universal source, divine breath of creation, you who exist in the realm of pure vibration and subtle energy…",
-  "May your sacred frequency be awakened within us. May we embody your divine essence. Let your kingdom arise within our hearts.",
-  "Let our individual will merge with the cosmic pattern, synchronizing the physical realm with the spiritual. As the microcosm reflects the macrocosm, nourish us daily with spiritual vitality.",
-  "Restore our alignment when we miss the mark. Dissolve the blockages we have created as we release and restore the flow of energy in others, for what we release, releases us.",
-  "Keep us awake and conscious. Do not let us fall into forgetfulness of our divine origin. Protect us from inner fragmentation and chaotic energy. Rescue us from the illusion of separation…",
-];
+import { useCallback, useState } from "react";
 
 const FINALE =
   "…for yours is the divine order within and without, the creative power that flows through all things and radiant consciousness that illuminates existence now and forever.";
 
-/** Local copy of: siarhei_korbut-963-hz-meditation-music-8d-440196.mp3 */
-const PRAYER_MUSIC_SRC = "/audio/963-meditation.mp3";
-const MUSIC_VOLUME = 0.52;
+/** Local prayer walkthrough clip (spoken, US English). */
+const PRAYER_VIDEO_SRC = "/videos/prayer-us-english-comp.mp4";
+
+const verseVariants = {
+  rest: {
+    opacity: 0.22,
+    y: 20,
+    filter: "blur(6px)",
+  },
+  focus: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+  },
+} as const;
 
 function ShareMeButton() {
   const [label, setLabel] = useState("Share Me");
@@ -58,73 +62,12 @@ function ShareMeButton() {
   );
 }
 
-const verseVariants = {
-  rest: {
-    opacity: 0.22,
-    y: 20,
-    filter: "blur(6px)",
-  },
-  focus: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-  },
-} as const;
-
-function PrayerVerse({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.p
-      variants={verseVariants}
-      initial="rest"
-      whileInView="focus"
-      viewport={{ amount: 0.42, margin: "-10% 0px -14% 0px" }}
-      transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-      className="max-w-xl text-center text-xl leading-relaxed tracking-wide text-stone-100 sm:text-2xl sm:leading-relaxed"
-    >
-      {children}
-    </motion.p>
-  );
-}
-
 export function PrayerLanding() {
   const [gateOpen, setGateOpen] = useState(false);
-  const musicRef = useRef<HTMLAudioElement | null>(null);
-
-  const stopPrayerAudio = useCallback(() => {
-    const m = musicRef.current;
-    if (m) {
-      m.pause();
-      m.volume = 0;
-      m.currentTime = 0;
-    }
-  }, []);
 
   const handleEnter = useCallback(() => {
     setGateOpen(true);
   }, []);
-
-  useEffect(() => {
-    if (!gateOpen) return;
-
-    const audio = new Audio(PRAYER_MUSIC_SRC);
-    audio.loop = true;
-    audio.preload = "auto";
-    audio.volume = MUSIC_VOLUME;
-    musicRef.current = audio;
-
-    void audio.play().catch(() => {});
-
-    return () => {
-      audio.pause();
-      audio.removeAttribute("src");
-      audio.load();
-      if (musicRef.current === audio) {
-        musicRef.current = null;
-      }
-    };
-  }, [gateOpen]);
-
-  useEffect(() => () => stopPrayerAudio(), [stopPrayerAudio]);
 
   return (
     <div className="fixed inset-0 z-[1] flex flex-col bg-slate-950 text-stone-100">
@@ -171,9 +114,7 @@ export function PrayerLanding() {
               <h1 className="text-2xl font-medium leading-snug text-stone-100 sm:text-3xl">
                 I am the WAY. the TRUTH. the LIFE.
               </h1>
-              <p className="text-base leading-relaxed text-stone-400">
-                Embody The LORDS PRAYER
-              </p>
+              <p className="text-base leading-relaxed text-stone-400">Embody The LORDS PRAYER</p>
             </motion.div>
             <motion.button
               type="button"
@@ -195,39 +136,33 @@ export function PrayerLanding() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          {/* Hero */}
-          <section className="relative flex min-h-[100dvh] snap-start snap-always flex-col items-center justify-center px-6 pb-28 pt-20">
+          <section
+            className="relative flex min-h-[100dvh] snap-start snap-always flex-col items-center justify-center gap-6 px-4 pb-16 pt-16 sm:px-6"
+            aria-label="Spoken Lords Prayer video"
+          >
             <div
-              className="pointer-events-none absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 sm:h-80 sm:w-80"
+              className="pointer-events-none absolute left-1/2 top-[30%] h-52 w-52 -translate-x-1/2 -translate-y-1/2 sm:h-72 sm:w-72"
               aria-hidden
             >
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500/28 via-indigo-600/14 to-transparent blur-3xl"
-                animate={{ scale: [0.9, 1.14, 0.9], opacity: [0.45, 0.8, 0.45] }}
-                transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <motion.div
-                className="absolute inset-[14%] rounded-full border border-amber-200/18 bg-violet-950/25"
-                animate={{ scale: [1, 1.09, 1] }}
+                className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500/22 via-indigo-600/12 to-transparent blur-3xl"
+                animate={{ scale: [0.9, 1.08, 0.9], opacity: [0.4, 0.65, 0.4] }}
                 transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
-            <div className="relative z-10">
-              <PrayerVerse>{STANZAS[0]}</PrayerVerse>
+            <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-violet-500/20 bg-black/45 shadow-xl shadow-violet-950/35">
+              <video
+                className="max-h-[min(72vh,560px)] w-full object-contain"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source src={PRAYER_VIDEO_SRC} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <p className="absolute bottom-12 text-[10px] uppercase tracking-[0.35em] text-stone-600">
-              Scroll
-            </p>
+            <p className="text-[10px] uppercase tracking-[0.35em] text-stone-600">Scroll</p>
           </section>
-
-          {STANZAS.slice(1).map((stanza, i) => (
-            <section
-              key={i}
-              className="flex min-h-[88dvh] snap-start snap-always flex-col items-center justify-center px-6 py-24"
-            >
-              <PrayerVerse>{stanza}</PrayerVerse>
-            </section>
-          ))}
 
           <section className="flex min-h-[100dvh] snap-start snap-always flex-col items-center justify-center gap-10 px-6 pb-36 pt-24">
             <motion.p
@@ -249,9 +184,7 @@ export function PrayerLanding() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                I am the{" "}
-                <span className="text-amber-200">WAY</span>, the{" "}
-                <span className="text-amber-200">TRUTH</span>, the{" "}
+                I am the <span className="text-amber-200">WAY</span>, the <span className="text-amber-200">TRUTH</span>, the{" "}
                 <span className="text-amber-200">LIFE</span>
               </motion.p>
               <motion.div
@@ -290,7 +223,7 @@ export function PrayerLanding() {
               transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
               <ShareMeButton />
-              <Link href="/app" onClick={stopPrayerAudio} className="inline-block">
+              <Link href="/app" className="inline-block">
                 <motion.span
                   className="inline-flex cursor-pointer items-center justify-center rounded-full border border-amber-200/40 bg-gradient-to-r from-violet-700/90 to-indigo-800/90 px-10 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-stone-100"
                   animate={{
