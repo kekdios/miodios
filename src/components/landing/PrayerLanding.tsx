@@ -150,9 +150,16 @@ export function PrayerLanding() {
                 transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
-            <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-violet-500/20 bg-black/45 shadow-xl shadow-violet-950/35">
+            <div
+              className="relative z-10 mx-auto overflow-hidden rounded-2xl border border-violet-500/20 bg-black/45 shadow-xl shadow-violet-950/35"
+              style={{
+                aspectRatio: "9 / 16",
+                maxHeight: "min(72vh, 560px)",
+                width: "min(calc(100vw - 2rem), calc(min(72vh, 560px) * 9 / 16))",
+              }}
+            >
               <video
-                className="max-h-[min(72vh,560px)] w-full object-contain"
+                className="h-full w-full object-contain"
                 controls
                 playsInline
                 preload="metadata"
