@@ -137,7 +137,7 @@ export function PrayerLanding() {
           transition={{ duration: 0.5 }}
         >
           <section
-            className="relative flex min-h-[100dvh] snap-start snap-always flex-col items-center justify-center gap-6 px-4 pb-16 pt-16 sm:px-6"
+            className="relative flex flex-col items-center justify-start gap-0 px-4 pb-3 pt-14 sm:px-6"
             aria-label="Spoken Lords Prayer video"
           >
             <div
@@ -158,20 +158,13 @@ export function PrayerLanding() {
                 width: "min(calc(100vw - 2rem), calc(min(72vh, 560px) * 9 / 16))",
               }}
             >
-              <video
-                className="h-full w-full object-contain"
-                controls
-                playsInline
-                preload="metadata"
-              >
+              <video className="h-full w-full object-contain" controls playsInline preload="metadata">
                 <source src={PRAYER_VIDEO_SRC} type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
             </div>
-            <p className="text-[10px] uppercase tracking-[0.35em] text-stone-600">Scroll</p>
           </section>
 
-          <section className="flex min-h-[100dvh] snap-start snap-always flex-col items-center justify-center gap-10 px-6 pb-36 pt-24">
+          <section className="flex min-h-[100dvh] snap-start snap-always flex-col items-center justify-center gap-10 px-6 pb-36 pt-4">
             <motion.p
               variants={verseVariants}
               initial="rest"
