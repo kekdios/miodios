@@ -1,3 +1,20 @@
+function PortraitMusicVideo({ src }: { src: string }) {
+  return (
+    <div
+      className="mx-auto w-full overflow-hidden rounded-2xl border border-violet-500/15 bg-black/40 shadow-lg shadow-violet-950/30"
+      style={{
+        aspectRatio: "9 / 16",
+        maxHeight: "min(70vh, 520px)",
+        width: "min(100%, calc(min(70vh, 520px) * 9 / 16))",
+      }}
+    >
+      <video className="h-full w-full object-contain" controls playsInline preload="metadata">
+        <source src={src} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
+
 export function VideosContent() {
   return (
     <article className="min-w-0 space-y-10 pb-10 pt-1 text-stone-200">
@@ -9,17 +26,7 @@ export function VideosContent() {
         <h2 id="video-kingdom-rise-heading" className="text-sm font-medium uppercase tracking-[0.12em] text-stone-500">
           Kingdom Rise
         </h2>
-        <div className="overflow-hidden rounded-2xl border border-violet-500/15 bg-black/40 shadow-lg shadow-violet-950/30">
-          <video
-            className="max-h-[min(70vh,520px)] w-full object-contain"
-            controls
-            playsInline
-            preload="metadata"
-          >
-            <source src="/videos/kingdom-rise-female-portrait-mv-comp.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <PortraitMusicVideo src="/videos/kingdom-rise-female-portrait-mv-comp.mp4" />
       </section>
 
       <section className="space-y-3 border-t border-violet-500/10 pt-8" aria-labelledby="video-369-heading">
@@ -34,7 +41,6 @@ export function VideosContent() {
             preload="metadata"
           >
             <source src="/videos/369-mv.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
       </section>
@@ -49,17 +55,7 @@ export function VideosContent() {
         >
           Rise Within · female · extended
         </h2>
-        <div className="overflow-hidden rounded-2xl border border-violet-500/15 bg-black/40 shadow-lg shadow-violet-950/30">
-          <video
-            className="max-h-[min(70vh,520px)] w-full object-contain"
-            controls
-            playsInline
-            preload="metadata"
-          >
-            <source src="/videos/rise-within-female-ext-mv.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <PortraitMusicVideo src="/videos/rise-within-female-ext-mv.mp4" />
       </section>
 
       <section className="space-y-3 border-t border-violet-500/10 pt-8" aria-labelledby="video-rise-within-heading">
@@ -74,7 +70,6 @@ export function VideosContent() {
             preload="metadata"
           >
             <source src="/videos/rise-within-mv.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
       </section>
